@@ -31,8 +31,9 @@ public class RolletBuilder implements IRolletBuilder{
         this.controller = controller;
     }
 
-    public double areaCalculation() {
-        return 0;
+    @Override
+    public double getArea() {
+        return ((int) width / 1000 * height / 1000 + width / 1000 * height / 1000 * installation * 0.3);
     }
 
     @Override
@@ -59,15 +60,5 @@ public class RolletBuilder implements IRolletBuilder{
     @Override
     public int totalPrice() {
         return priceForOneSquareMeter() + productPrice() + installationPrice();
-    }
-
-    // TODO
-    public double getArea() {
-        return ((int) width / 1000 * height / 1000 + width / 1000 * height / 1000 * installation * 0.3);
-    }
-
-    //TODO
-    private void setArea(int area) {
-        this.area = area;
     }
 }

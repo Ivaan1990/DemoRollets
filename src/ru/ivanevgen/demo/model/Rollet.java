@@ -6,16 +6,7 @@ package ru.ivanevgen.demo.model;
 
 public class Rollet {
 
-    private int width;                // ширина
-    private int height;               // высота
-    private int installation;     //Накладной монтаж
-    private boolean radioModule;      // Радиомодуль
-    private boolean emergencyUnlock;  // Аварийная разблокировка
-    private int controller;           // пульт управления
-
-    public int getArea() {
-        return (int)rolletBuilder.getArea();
-    }
+    public Rollet(){}
 
     private int PRICE_DELEVERY = 2000; // цена доставки, TODO уточнить, всегда ли 2000
     private RolletBuilder rolletBuilder;
@@ -28,5 +19,7 @@ public class Rollet {
         return rolletBuilder.totalPrice();
     }
 
-
+    public int getArea() {
+        return (int)rolletBuilder.getArea();
+    }
 }
