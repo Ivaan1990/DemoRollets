@@ -11,15 +11,21 @@ public class Rollet {
     private int PRICE_DELEVERY = 2000; // цена доставки, TODO уточнить, всегда ли 2000
     private RolletBuilder rolletBuilder;
 
-    public void constractRollet(int width, int height, int installation, boolean radioModule, boolean emergencyUnlock, int controller) {
+    public void constractRollet(int width,
+                                int height,
+                                int installation,
+                                boolean radioModule,
+                                boolean emergencyUnlock,
+                                int controller) {
         rolletBuilder = new RolletBuilder(width, height, installation, radioModule, emergencyUnlock, controller);
     }
 
-    public int getTotalPrice() {
+    public double getTotalPrice() {
         return rolletBuilder.totalPrice();
     }
 
-    public int getArea() {
-        return (int)rolletBuilder.getArea();
+    public double getArea() {
+        return rolletBuilder.getArea();
     }
+
 }

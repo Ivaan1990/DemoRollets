@@ -1,7 +1,7 @@
 package ru.ivanevgen.demo.model;
 
 /**
- *  * При создания обекта роллеты, нам необходимо проиницализировать поля:
+ *  *  Создание роллеты происходит через строителяю.
  *  *  1. Ширина ролеты, мм (величина в милиметрах)
  *  *  2. Высота ролеты, мм (величина в милиметрах)
  *  *  3 .Накладной монтаж (1 - понадобиттся, 0 - не понадобится)
@@ -13,16 +13,16 @@ package ru.ivanevgen.demo.model;
 
 public class RolletBuilder implements IRolletBuilder{
 
-    private int width;                // ширина
-    private int height;               // высота
-    private int installation;     //Накладной монтаж
-    private int area;                 // площадь
+    private double area;                 // площадь
+
+    private double  width;                // ширина
+    private double  height;               // высота
+    private int     installation;     //Накладной монтаж
     private boolean radioModule;      // Радиомодуль
     private boolean emergencyUnlock;  // Аварийная разблокировка
-    private int controller;           // пульт управления
+    private int     controller;           // пульт управления
 
-    public RolletBuilder(int width, int height, int installation, boolean radioModule, boolean emergencyUnlock, int controller) {
-
+    public RolletBuilder(double width, double height, int installation, boolean radioModule, boolean emergencyUnlock, int controller) {
         this.width = width;
         this.height = height;
         this.installation = installation;
@@ -33,14 +33,14 @@ public class RolletBuilder implements IRolletBuilder{
 
     @Override
     public double getArea() {
-        return ((int) width / 1000 * height / 1000 + width / 1000 * height / 1000 * installation * 0.3);
+        return width / 1000 * height / 1000 + width / 1000 * height / 1000 * installation * 0.3;
     }
 
     @Override
-    public int priceForOneSquareMeter() {
+    public double priceForOneSquareMeter() {
         // Если площать больше 7 то
         if(area > 7) {
-            return (int)getArea();
+            return getArea();
         } else {
 
         }
@@ -58,7 +58,7 @@ public class RolletBuilder implements IRolletBuilder{
     }
 
     @Override
-    public int totalPrice() {
+    public double totalPrice() {
         return priceForOneSquareMeter() + productPrice() + installationPrice();
     }
 }
