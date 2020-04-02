@@ -7,14 +7,13 @@ public class Demo {
     public static void main(String[] args) {
         Rollet rollet = new Rollet();
         rollet.constractRollet(
-                4200,
-                3800,
+                2000,
+                3900,
                 0,
                 true,
                 true,
                 1
         );
-        //System.out.println(rollet.getTotalPrice());
-        System.out.println(rollet.getArea());
+        System.out.println(rollet.getPriceForOneSquareMeter());
     }
 }

@@ -1,8 +1,8 @@
 package ru.ivanevgen.demo.model;
 
 public interface IRolletBuilder {
-    double priceForOneSquareMeter(); //Цена 1 кв.м.
-    int productPrice(); //Цена изделия
-    int installationPrice(); //Цена монтажа
-    double totalPrice(); //Итого:
+    int priceForOneSquareMeter(); //Цена за 1 кв.м. с учетом ширины и общей площади ролеты
+    int productPrice();           //Цена изделия
+    double installationPrice();      //Цена монтажа
+    double totalPrice();          //Итого:
 }

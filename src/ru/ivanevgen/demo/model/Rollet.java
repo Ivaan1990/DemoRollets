@@ -28,4 +28,7 @@ public class Rollet {
         return rolletBuilder.getArea();
     }
 
+    public int getPriceForOneSquareMeter(){
+        return (int)rolletBuilder.priceForOneSquareMeter();
+    }
 }
